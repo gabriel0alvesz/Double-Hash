@@ -33,7 +33,7 @@ HashTable *CriarTH(int tam){
 
 	}
 
-	printf("\n-------> Tabela Hash de %d posicoes criada!\n\n", tam);
+	printf("\n-------> Tabela Hash de %d posicoes criada!\n", tam);
 
 	return aux;
 }
@@ -94,7 +94,7 @@ void ImprimirTH(HashTable *TH){
 
 	}
 
-	printf("\nPara inserir todos os elementos nesta tabela\nHouve %d colisões\n\n", TH->qtd_col);
+	printf("\nHouve %d colisões\n\n", TH->qtd_col);
 
 }
 
@@ -102,13 +102,14 @@ void ImprimirTH(HashTable *TH){
 void PreencheHash(HashTable *TH){
 
 	int chave;
-	
-	srand(time(0));
-	for(int i = 0; i < MAX_ELEM; i++){
-		
-		chave = rand() % 100;
+	int vet[VET];
 
-		InsereEmTH(TH, chave, chave);
+	VetNoRepetions(vet);
+	printf("\n");
+	
+	for(int i = 0; i < VET; i++){
+		
+		InsereEmTH(TH, vet[i], vet[i]);
 
 		//ImprimirTH(TH);
 
@@ -116,11 +117,51 @@ void PreencheHash(HashTable *TH){
 
 }
 
+void VetNoRepetions(int *vet){
+
+	int num, i = 0;
+	int control; // Variavel de controle
+	srand(time(0));
+
+	while(i < VET){
+
+		vet[i] = rand() % 100;
+		control = 0;
+
+		for(int j = 0; j < i; j++){
+
+			if(vet[j] == vet[i]){
+
+				control = 1;
+			}
+
+		}
+
+		if(control == 0){
+
+				i++;
+		}
+	}
+
+	//Inteiros nao repetidos.
+	printf("\n\nVetor de inteiros => ");
+
+	for(int j = 0; j < VET; j++){
+
+		printf("%d ", vet[j]);
+
+	}
+
+	printf("\n");
+
+}
+
+
 void ExecHashDuplaEA(){
 
 	HashTable *TH;
 	
-	TH = CriarTH(41);
+	TH = CriarTH(MAX);
 
 	PreencheHash(TH);
 

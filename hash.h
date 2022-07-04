@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define MAX_ELEM 20
+#define MAX 20
+#define VET 41
 
 
 typedef enum Estado{
@@ -37,5 +38,6 @@ void InsereEmTH(HashTable *TH, int chave, int valor);
 void PreencheHash(HashTable *TH);
 void ImprimirTH(HashTable *TH);
 void ExecHashDuplaEA();
+void VetNoRepetions(int *vet);
 
 
