@@ -56,7 +56,7 @@ Abaixo, há um pequeno gif da execução do algoritmo que mostra como as colisõ
 <h2>Referências</h2>
 <p align = "justify">
         <ul>
-        <li><a = href = "https://blog.pantuza.com/artigos/tipos-abstratos-de-dados-tabela-hash">Tabela Hash/a> - Por: Gustavo Pantuza</li>
+         <li><a = href = "https://blog.pantuza.com/artigos/tipos-abstratos-de-dados-tabela-hash">Tabela Hash</a> - Gustavo Pantuza</li>
         </ul>
         </p>
 
