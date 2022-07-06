@@ -9,11 +9,12 @@
 <h2>Colisões</h2>
 
 <p align = "justify">
-      Em uma Tabela Hash, quando uma posição já está ocupada, uma outra chave é associada a mesma posição, dizemos que há uma colisão. Para corrigir as colisões, neste repositório, foi implementado o método de <i>Endereçamento Aberto</i>, que não utiliza <a href = "https://github.com/Nerd100oculoS/Simple-Hash"> Listas Encadeadas</a>. Dessa forma, espaço gasto com encadeamento é economizado e a colisão é tratada com uma nova busca na própria tabela para inserção. A figura 2 abaixo, demonstra como acontece as colisões no <i>Endereçamento Aberto</i>.
-      </p>
+      Em uma Tabela Hash, quando uma posição já está ocupada, uma outra chave é associada a mesma posição, dizemos que há uma colisão. Para corrigir as colisões, neste repositório, foi implementado o método de <i>Endereçamento Aberto</i>, que não utiliza <i>Listas Encadaedas</i>. Dessa forma, espaço gasto com encadeamento é economizado e a colisão é tratada com uma nova busca na própria tabela para inserção. A figura 1 abaixo, demonstra como acontece as colisões no <i>Endereçamento Aberto</i> por meio de um Hash Duplo.
+</p>
 
 <p align = "center">
- <img width="291" alt="Captura de Tela 2022-07-05 às 19 15 23" src="https://user-images.githubusercontent.com/103065659/177430181-1218f849-9451-489e-9544-2d159593c699.png"><br>
+<img src = "figura.png"></img>
+ <br>
 Figura 1 - Exemplo de Colisão em Endereçamento Aberto
 </p>
 
@@ -22,20 +23,30 @@ Figura 1 - Exemplo de Colisão em Endereçamento Aberto
 <h2> O que é Hash Duplo? </h2>
 
 <p align = "justify">
-     O Hash Duplo é a implementação de duas funções de espelhamento que trabalham em conjunto quando há colisão. No Desenvolvimento deste algoritmo foi utilizado as seguintes funções para tratar as colisões. Sendo "tam" o tamanho da tabela.
+     O Hash Duplo é a implementação de duas funções de espelhamento que trabalham em conjunto quando há colisão - sendo que a segunda função, jamais poderá assumir valor igual a zero. No Desenvolvimento deste algoritmo foi utilizado as seguintes funções para tratar as colisões. Sendo "tam", o tamanho da tabela.
       </p>
 
 * h1(chave, tam) = (chave*1/3) mod tam
 * h2(chave,tam) = [(chave + 1) mod 7] + 1
-* H(h1,h2,K) = [h2*k + h1 + k] mod tam ; K = quantidade de colisões ao tentar inserir.
+* H(h1,h2,K) = (h2*k + h1 + k) mod tam ; K = quantidade de colisões por tentativa de inserção.
 
-![video](https://user-images.githubusercontent.com/103065659/177434872-e16016d6-29b3-4723-a0f5-6435cdb19163.gif)<br>
-Execução do algoritmo
+Abaixo, há um pequeno gif da execução do algoritmo que mostra como as colisões não usam uma hash linear, ou seja, não verificam as próximas posições até encontrar uma posição vazia.
+
+<p align = "center">
+ <img src = "video.gif"/><br>
+ Vídeo 1 - Execução do Algoritmo
+<p>
 
 
 <h2>Qual o custo de uma Tabela Hash com Endereçamento Aberto?</h2>
 <p align = "justify">
+  O fato de utilizar o endereçamento aberto, ja demonstra que para inserir o melhor caso e o caso médio são <i>O(1)</i>. Inserindo no início da tabela. Já a pesquisa e a remoção - apesar de não estarem sendo contempladas neste repositório - tem-se no pior caso <i>O(M)</i>, sendo M o tamanho da tabela. Isso ocorre quando a muitas colisões.
         </p>
+        
+<h2>Considerações Finais</h2>
+<p align = "justify">
+ Levando em Consideração a tabela hash por <a href = "https://github.com/Nerd100oculoS/Simple-Hash"> endereçamento fechado</a>. Pode-se concluir que o endereçamento fechado pode ser mais vantajoso para inserir elementos, mas abusa do consumo de memória dependendo da quantidade de dados. Já o endereçamento aberto, ao se conhecer os dados, funciona de forma eficiente, mas pode gerar muitas colisões, elevando o custo computacional na inserção de elementos.
+        </p> 
 
 <h2>Referências</h2>
 <p align = "justify">
