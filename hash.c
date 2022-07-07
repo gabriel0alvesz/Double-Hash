@@ -3,6 +3,7 @@
 //Hash1 h1(chave,tam) = (chave*1/3)%tam
 //Hash2 h2(chave,tam) = [(chave + 1)%7] +1
 //Em caso de colisão => HD(h1,h2,K) = [h2*k + h1 + k]%tam
+
 int Hash1(int tam, int chave){
 
 	return (int)((chave*1/3)%tam);
