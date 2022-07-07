@@ -15,7 +15,7 @@
 <p align = "center">
 <img src = "figura.png"></img>
  <br>
-Figura 1 - Exemplo de Colisão em Endereçamento Aberto
+Figura 1 - Exemplo de Colisão em Endereçamento Aberto utilizando Hash Duplo
 </p>
 
 <br>
@@ -27,7 +27,7 @@ Figura 1 - Exemplo de Colisão em Endereçamento Aberto
       </p>
 
 * h1(chave, tam) = (chave*1/3) mod tam
-* h2(chave,tam) = [(chave + 1) mod 7] + 1
+* h2(chave,tam) = [(chave + 1) mod tam] + 1
 * H(h1,h2,K) = (h2*k + h1 + k) mod tam ; K = quantidade de colisões por tentativa de inserção.
 
 Abaixo, há um pequeno gif da execução do algoritmo que mostra como as colisões não usam uma hash linear, ou seja, não verificam as próximas posições até encontrar uma posição vazia.
