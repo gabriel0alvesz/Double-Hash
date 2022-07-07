@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define MAX 20
-#define VET 41
+#define MAX 41
+#define VET 20
 
 
 typedef enum Estado{

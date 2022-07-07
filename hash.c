@@ -10,7 +10,7 @@ int Hash1(int tam, int chave){
 
 int Hash2(int tam, int chave){
 
-	return ((chave+1)%7)+1;
+	return ((chave+1)%tam)+1;
 }
 
 int HashDupla(int tam, int h1, int h2, int k){
@@ -25,7 +25,7 @@ HashTable *CriarTH(int tam){
 	aux = malloc(sizeof(HashTable)); //Aloca a tabela
 	aux->tam = tam;
 	aux->qtd_col = 0;
-	aux->TH = malloc(sizeof(Elemento) * tam);// Aloca espaco para os elementos
+	aux->TH = malloc(sizeof(Elemento) * tam);//Aloca espaco para os elementos
 
 	for(int i = 0; i < tam; i++){
 
